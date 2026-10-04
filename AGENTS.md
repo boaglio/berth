@@ -32,6 +32,7 @@ Installed apps:
 ```
 <app>.sh                        Per-app launcher (resolves its env, execs the entrypoint).
 <app>-env/                      Per-app isolated environment (installed package — a build artifact).
+README.md / docs/                Human-facing overview and its screenshots.
 .claude/settings.local.json     Local Claude Code permission allowlist (gitignored, machine-local).
 ```
 
