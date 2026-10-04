@@ -218,3 +218,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# berth: per-app environments are build artifacts (see AGENTS.md)
+*-venv/
+*-env/
+# Machine-local Claude Code permissions
+.claude/settings.local.json
