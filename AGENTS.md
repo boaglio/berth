@@ -114,6 +114,14 @@ App-specific notes:
   - **Upgrade log, 2026-10-03:** 0.13.0 → 0.13.1. Other packages were already
     current. This adds `claude-opus-5-5` pricing. Before this, Opus 5.5 was
     priced as Opus 5, which overstated its cost about 2x.
+  - **Upgrade log, 2026-10-11:** PySide6/shiboken6 6.11.2 → 6.12.0. The
+    SIGSEGV crash came back on 6.11.2 with Python 3.14.4, so 6.11.2 did not
+    fix it. It was the same crash: a worker thread crashed in
+    `_Py_HandlePending` while the GUI thread was in
+    `Shiboken::ThreadStateSaver` inside `_Py_Dealloc` during a paint. The
+    6.12.0 changelog doesn't name this bug, so this upgrade may not fix it
+    either. If it crashes again, rebuild the venv on Python 3.13. That needs
+    `python3.13` installed first, because only 3.14 is on the system.
   - **Known log noise:** repeated `qt.qpa.services: Failed to register with
     host portal` lines are harmless on KDE. `UserWarning: Unknown model ...;
     falling back to ... pricing` means the cost for that model is estimated
